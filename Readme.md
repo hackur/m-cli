@@ -57,8 +57,10 @@ usage:  m [OPTIONS] COMMAND [help]
         gatekeeper
         hostname
         info
+		itunes
         lock
         ntp
+        printer
         network
         nosleep
         notification
@@ -114,17 +116,17 @@ usage:  m [OPTIONS] COMMAND [help]
 
       m disk ejectall                           # eject all mountable volumes
 
-      m disk verify volume  /Volume/MyVol       # verify volume
+      m disk verify volume /Volume/MyVol        # verify volume
       m disk verify disk /dev/disk0             # verify disk
 
       m disk repair volume /Volume/MyVol        # repair volume
       m disk repair disk /dev/disk0             # repair disk
 
-      m disk format MS-DOS MYNAME  /dev/disk2             # format the entire disk with a windows format (MS-DOS)
-      m disk format volume MS-DOS MYNAME /Volumes/myvol   # format the volume with a windows format(MS-DOS)
+      m disk format MS-DOS MYNAME /dev/disk2              # format the entire disk with a windows format (MS-DOS)
+      m disk format volume MS-DOS MYNAME /Volumes/myvol   # format the volume with a windows format (MS-DOS)
 
-      m disk reformat /Volumes/myvol                      # reformat a volume
-      m disk rename CURRENTNAME NEWNAME                   # rename a volume
+      m disk reformat /Volumes/myvol            # reformat a volume
+      m disk rename CURRENTNAME NEWNAME         # rename a volume
 
 ```
 
@@ -270,6 +272,25 @@ usage:  m [OPTIONS] COMMAND [help]
       m info        #  print macOS operating system version information
 ```
 
+### Itunes:
+```
+   usage: m itunes [ status | play | pause | next | prev | mute | unmute | vol up | vol down | vol #| stop | quit | help ]
+
+    Examples:
+      m itunes status       # Show status
+      m itunes play         # Play track
+      m itunes pause        # Pause track
+      m itunes next         # Play next track
+      m itunes prev         # Play previous track
+      m itunes mute         # Mute iTunes
+      m itunes unmute       # Unmute iTunes
+      m itunes vol up       # Volume Up
+      m itunes vol down     # Volume Down
+      m itunes vol #        # Set volume level
+      m itunes stop         # Stop track
+      m itunes quit         # Quit iTunes
+```
+
 #### Lock:
 ```
     usage:  m lock [ help ]
@@ -287,6 +308,18 @@ usage:  m [OPTIONS] COMMAND [help]
       m ntp enable                          # enable clock to use network time
       m ntp disable                         # disable clock to use network time
       m ntp set timehost1.net.sap.corp      # set network time server
+```
+
+#### Printer:
+```
+    usage: m printer [ settings | name | queue | drivers | web | help ]
+
+    Examples:
+      m printer settings    # Printer settings
+      m printer name        # Display printer names on system
+      m printer queue       # Display items in printer queue on system
+      m printer drivers     # Display all printer drivers
+      m printer web         # Enable and show web interface
 ```
 
 #### Network:
@@ -309,6 +342,8 @@ usage:  m [OPTIONS] COMMAND [help]
     Examples:
       m nosleep until 3600            # no sleep until 3600 seconds
       m nosleep until my_script.sh    # no sleep until the script ends
+
+      m nosleep until pid 64377       # no sleep until the process id ends
 ```
 
 #### Notification:
@@ -343,12 +378,13 @@ usage:  m [OPTIONS] COMMAND [help]
 
 #### Screensaver:
 ```
-    usage: m screensaver [ askforpassword | help ]
+    usage: m screensaver [ status | askforpassword | help ]
 
     Examples:
       m screensaver                         # launch screensaver
 
-      m screensaver askforpassword          #  get the current status
+      m screensaver status                  #  get the current status
+      m screensaver askforpassword          #  get password requirement to unlock
       m screensaver askforpassword YES      #  enable password requirement to unlock
       m screensaver askforpassword NO       #  disable password requirement to unlock
 ```
@@ -438,10 +474,14 @@ usage:  m [OPTIONS] COMMAND [help]
 
 #### Volume:
 ```
-    usage:  m volume [ level(0-100) | mute | unmute | ismute ]
+    usage:  m volume [ level(0-100) | change(-n|+n) | up | down | mute | unmute | ismute ]
 
     Examples:
       m volume 70     # set the volume to 70 %
+      m volume +5     # increase the volume by 5 (up to 100)
+      m volume -10    # decrease the volume by 5 (down to 0)
+      m volume up     # increase the volume by 6.25
+      m volume down   # decrease the volume by 6.25
       m volume        # get the volume level
       m volume mute   # set mute
       m volume unmute # unset mute
@@ -455,6 +495,7 @@ usage:  m [OPTIONS] COMMAND [help]
     Examples:
       m vpn ls                              # list VPN connections
 
+      m vpn start                           # interactive mode
       m vpn start VPN                       # start vpn connection named VPN
       m vpn start VPN USER                  # start a vpn connection with a given user
       m vpn start VPN USER PASS             # start a vpn connection with a given user and password
@@ -485,6 +526,7 @@ usage:  m [OPTIONS] COMMAND [help]
       m wifi off                     # turn off your wifi
       m wifi on                      # turn on your wifi
       m wifi connect ESSID PASSWORD  # join a wifi network
+      m wifi connect ESSID           # join a wifi network (prompt for password)
 
 ```
 
@@ -498,7 +540,6 @@ usage:  m [OPTIONS] COMMAND [help]
 
 ## TODO:
 * Add more plugins
-* Add a brew formula
 * Improve the help
 * Improve the installation script
 

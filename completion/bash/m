@@ -52,6 +52,9 @@ _m_sub () {
         info)
             subcommands=(help)
             ;;
+        itunes)
+            subcommands=(status play pause next prev mute unmute vol stop quit help)
+            ;;
         lock)
             subcommands=(help)
             ;;
@@ -67,6 +70,9 @@ _m_sub () {
         ntp)
             subcommands=(status enable disable set help)
             ;;
+        printer)
+            subcommands=(settings name queue drivers web help)
+            ;;
         restart)
             subcommands=(-f help)
             ;;
@@ -74,7 +80,7 @@ _m_sub () {
             subcommands=(status enable disable help)
             ;;
         screensaver)
-            subcommands=(askforpassword help)
+            subcommands=(status askforpassword help)
             ;;
         service)
             subcommands=(
@@ -100,7 +106,7 @@ _m_sub () {
             subcommands=(ls install help)
             ;;
         volume)
-            subcommands=(mute unmute ismute help)
+            subcommands=(up down mute unmute ismute help)
             ;;
         vpn)
             subcommands=(list status stop start help)
@@ -209,7 +215,7 @@ _m () {
     local cur
     local commands=(
         help battery bluetooth dir disk dns dock finder firewall gatekeeper group hostname
-        info lock network nosleep notification ntp restart safeboot screensaver service
+        info itunes lock network nosleep notification ntp printer restart safeboot screensaver service
         shutdown sleep timezone trash user update volume vpn wallpaper wifi
     )
 

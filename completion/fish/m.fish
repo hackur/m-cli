@@ -124,6 +124,19 @@ complete -f -c m -n '__fish_m_using_command hostname' -a "help" -d 'Show help'
 complete -f -c m -n '__fish_m_needs_command' -a info -d 'print macOS operating system version information'
 complete -f -c m -n '__fish_m_using_command info' -a "help" -d 'Show help'
 
+complete -f -c m -n '__fish_m_needs_command' -a itunes -d 'itunes command line control'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "status" -d 'show status, current artist and track'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "play" -d 'start playing iTunes'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "pause" -d 'pause iTunes'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "next" -d 'go to the next track'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "prev" -d 'go to the previous track'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "mute" -d 'mute volume'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "unmute" -d 'mute volume'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "vol" -d 'increase and decrease volume'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "stop" -d 'stop iTune'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "quit" -d 'quit iTunes'
+complete -f -c m -n '__fish_m_using_command itunes ' -a "help" -d 'Show help'
+
 complete -f -c m -n '__fish_m_needs_command' -a lock -d 'Lock session'
 complete -f -c m -n '__fish_m_using_command lock' -a "help" -d 'Show help'
 
@@ -134,7 +147,7 @@ complete -f -c m -n '__fish_m_using_command network' -a "location" -d 'get or se
 complete -f -c m -n '__fish_m_using_command network' -a "help" -d 'Show help'
 
 complete -f -c m -n '__fish_m_needs_command' -a nosleep -d 'Prevent sleeping'
-complete -f -c m -n '__fish_m_using_command nosleep' -a "until" -d 'until timeout or specified script ends'
+complete -f -c m -n '__fish_m_using_command nosleep' -a "until" -d 'until timeout, pid or specified script ends'
 complete -f -c m -n '__fish_m_using_command nosleep' -a "help" -d 'Show help'
 
 complete -f -c m -n '__fish_m_needs_command' -a notification -d 'Manage the Notification Settings'
@@ -148,6 +161,13 @@ complete -f -c m -n '__fish_m_using_command ntp' -a "disable" -d 'disable clock 
 complete -f -c m -n '__fish_m_using_command ntp' -a "set" -d 'set network time server'
 complete -f -c m -n '__fish_m_using_command ntp' -a "help" -d 'Show help'
 
+complete -f -c m -n '__fish_m_needs_command' -a printer -d 'Display information about the printers'
+complete -f -c m -n '__fish_m_using_command printer' -a "settings" -d 'Display printer settings'
+complete -f -c m -n '__fish_m_using_command printer' -a "name" -d 'Display printer names on system'
+complete -f -c m -n '__fish_m_using_command printer' -a "queue" -d 'Display items in printer queue on system'
+complete -f -c m -n '__fish_m_using_command printer' -a "drivers" -d 'Display all printer drivers'
+complete -f -c m -n '__fish_m_using_command printer' -a "web" -d 'Enable and show web interface'
+
 ## XXX: Add completion for restart options
 complete -f -c m -n '__fish_m_needs_command' -a restart -d 'Restart computer'
 complete -f -c m -n '__fish_m_using_command restart' -a "help" -d 'Show help'
@@ -160,6 +180,7 @@ complete -f -c m -n '__fish_m_using_command safeboot' -a "help" -d 'Show help'
 
 ## XXX: Add completion for screensaver options
 complete -f -c m -n '__fish_m_needs_command' -a screensaver -d 'Launch and manage the screensaver properties'
+complete -f -c m -n '__fish_m_using_command screensaver' -a "status" -d 'get the current status'
 complete -f -c m -n '__fish_m_using_command screensaver' -a "askforpassword" -d 'get,enable or disable password requirement to unlock'
 complete -f -c m -n '__fish_m_using_command screensaver' -a "help" -d 'Show help'
 
@@ -175,7 +196,7 @@ complete -f -c m -n '__fish_m_using_command service' -a "help" -d 'Show help'
 complete -f -c m -n '__fish_m_needs_command' -a shutdown -d 'Shutdown computer'
 complete -f -c m -n '__fish_m_using_command shutdown' -a "help" -d 'Show help'
 
-complete -f -c m -n '__fish_m_needs_command' -a sleep -d ''
+complete -f -c m -n '__fish_m_needs_command' -a sleep -d 'Sleep computer'
 complete -f -c m -n '__fish_m_using_command sleep' -a "help" -d 'Show help'
 
 complete -f -c m -n '__fish_m_needs_command' -a timezone -d 'Manage timezone'
@@ -201,6 +222,8 @@ complete -f -c m -n '__fish_m_using_command update' -a "install" -d 'install upd
 complete -f -c m -n '__fish_m_using_command update' -a "help" -d 'Show help'
 
 complete -f -c m -n '__fish_m_needs_command' -a volume -d "Manage the sound's volume"
+complete -f -c m -n '__fish_m_using_command volume' -a "up" -d 'increase the volume'
+complete -f -c m -n '__fish_m_using_command volume' -a "down" -d 'decrease the volume'
 complete -f -c m -n '__fish_m_using_command volume' -a "mute" -d 'set mute'
 complete -f -c m -n '__fish_m_using_command volume' -a "unmute" -d 'unset mute'
 complete -f -c m -n '__fish_m_using_command volume' -a "ismute" -d 'check the volume status'
